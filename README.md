@@ -6,7 +6,7 @@ Bu uygulama tüm ExWeiv uygulamamaları veya servislerinde kullanılacak UI/UX c
 
 ### Kullanılabilir Componentlar:
 
-- [Text Input](https://www.wix.com/velo/reference/$w/textinput)
+- [Text Input](https://www.wix.com/velo/reference/$w/textinput) With Optional Icon
 
 <br/>
 
