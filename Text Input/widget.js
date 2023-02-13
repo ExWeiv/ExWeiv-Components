@@ -1,6 +1,5 @@
 $w.onReady(function () {
     // Initialize your widget here. If your widget has properties, this is a good place to read their values and initialize the widget accordingly.
-
     $widget.props.inputType = $w('#inputElement').inputType;
     $widget.props.max = $w('#inputElement').max;
     $widget.props.min = $w('#inputElement').min;
@@ -35,7 +34,12 @@ $w.onReady(function () {
     $w('#inputElement').onViewportEnter((event) => { $widget.fireEvent("onViewportEnter", event) });
     $w('#inputElement').onViewportLeave((event) => { $widget.fireEvent("onViewportLeave", event) });
     $w('#inputElement').onChange((event) => { $widget.fireEvent("onChange", event) });
-    $w('#inputElement').onInput((event) => { $widget.fireEvent("onInput", event) });
+
+    $w('#inputElement').onInput((event) => {
+        $widget.props.value = event.target.value;
+        $widget.fireEvent("onInput", event);
+    });
+
     $w('#inputElement').onBlur((event) => { $widget.fireEvent("onBlur", event) });
     $w('#inputElement').onFocus((event) => { $widget.fireEvent("onFocus", event) });
     $w('#inputElement').onClick((event) => { $widget.fireEvent("onClick", event) });
@@ -45,14 +49,15 @@ $w.onReady(function () {
 $widget.onPropsChanged((oldProps, newProps) => {
     // If your widget has properties, onPropsChanged is where you should handle changes to their values.
     // Property values can change at runtime by code written on the site, or when you preview your widget here in the App Builder.
+    let props = ['value', 'label', 'maxLength', 'placeholder', 'required', 'inputType', 'max', 'min'];
 
-    Object.keys(newProps).forEach((apiKey) => {
-        if (apiKey === 'style') {
-            $w('#inputElement').style[apiKey] = newProps[apiKey];
-        } else if (apiKey === 'validity') {
-            $w('#inputElement').validity[apiKey] = newProps[apiKey];
-        } else {
-            $w('#inputElement')[apiKey] = newProps[apiKey];
+    Object.keys(newProps).forEach((propName) => {
+        if (propName === 'style') {
+            $w('#inputElement').style[propName] = newProps[propName];
+        } else if (propName === 'validity') {
+            $w('#inputElement').validity[propName] = newProps[propName];
+        } else if (props.includes(propName) === true) {
+            $w('#inputElement')[propName] = newProps[propName];
         }
     })
 });
@@ -63,6 +68,7 @@ $widget.onPropsChanged((oldProps, newProps) => {
  */
 export function hideNumberSpinner() {
     $w('#inputElement').hideNumberSpinner();
+    $widget.props.numberSpinnerHidden = $w('#inputElement').numberSpinnerHidden;
 }
 
 /**
@@ -71,6 +77,7 @@ export function hideNumberSpinner() {
  */
 export function showNumberSpinner() {
     $w('#inputElement').showNumberSpinner();
+    $widget.props.numberSpinnerHidden = $w('#inputElement').numberSpinnerHidden;
 }
 
 /**
@@ -103,6 +110,7 @@ export function updateValidityIndication() {
  */
 export function hide(effectName = undefined, effectOptions = undefined) {
     $w('#inputElement').hide(effectName, effectOptions);
+    $widget.props.hidden = $w('#inputElement').hidden;
 }
 
 /**
@@ -111,6 +119,7 @@ export function hide(effectName = undefined, effectOptions = undefined) {
  */
 export function show(effectName = undefined, effectOptions = undefined) {
     $w('#inputElement').show(effectName, effectOptions);
+    $widget.props.hidden = $w('#inputElement').hidden;
 }
 
 /**
@@ -119,6 +128,7 @@ export function show(effectName = undefined, effectOptions = undefined) {
  */
 export function collapse() {
     $w('#inputElement').collapse();
+    $widget.props.collapsed = $w('#inputElement').collapsed;
 }
 
 /**
@@ -127,6 +137,7 @@ export function collapse() {
  */
 export function expand() {
     $w('#inputElement').expand();
+    $widget.props.collapsed = $w('#inputElement').collapsed;
 }
 
 /**
@@ -135,6 +146,7 @@ export function expand() {
  */
 export function disable() {
     $w('#inputElement').disable();
+    $widget.props.enabled = $w('#inputElement').enabled;
 }
 
 /**
@@ -143,6 +155,7 @@ export function disable() {
  */
 export function enable() {
     $w('#inputElement').enable();
+    $widget.props.enabled = $w('#inputElement').enabled;
 }
 
 /**
@@ -169,4 +182,6 @@ export function focus() {
  */
 export function onCustomValidation(validator, override) {
     $w('#inputElement').onCustomValidation(validator, override);
+    $widget.props.valid = $w('#inputElement').valid;
+    $widget.props.validity = $w('#inputElement').validity;
 }
