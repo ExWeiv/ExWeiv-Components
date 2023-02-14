@@ -42,6 +42,8 @@ Bu uygulama tüm ExWeiv uygulamamaları veya servislerinde kullanılacak UI/UX c
 | P2   | Poppins Regular 14px  | Detay Yazısı ve Minik Başlıklar |
 | P3   | Poppins Light 13px    | Küçük Detaylar                  |
 
+<img src="https://img001.prntscr.com/file/img001/xYNfBIIgT2uqqz3ponFKJQ.png">
+
 ---
 
 İyi Çalışmalar 💙 | <img style="margin-bottom: -2px;" src="https://static.wixstatic.com/media/510eca_31fa556461e5414481333a796deceff9~mv2.png"  height="16"/>
