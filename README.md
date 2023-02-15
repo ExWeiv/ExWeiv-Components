@@ -8,8 +8,9 @@ Bu uygulama tüm ExWeiv uygulamamaları veya servislerinde kullanılacak UI/UX c
 
 - [Text Input](https://www.wix.com/velo/reference/$w/textinput)
 - [Text Input With Icon](https://www.wix.com/velo/reference/$w/textinput)
+- [Breadcrumbs](https://www.wix.com/velo/reference/$w/breadcrumbs)
 
-<br/>
+---
 
 ### Renkler ve Kullanım Alanları
 
@@ -26,7 +27,7 @@ Bu uygulama tüm ExWeiv uygulamamaları veya servislerinde kullanılacak UI/UX c
 | #998e8e       | Disabled State Border     |
 | #998e8e (%20) | Disabled State Background |
 
-<br/>
+---
 
 ### Fontlar ve Kullanımları 
 
