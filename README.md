@@ -9,6 +9,7 @@ Bu uygulama tüm ExWeiv uygulamamaları veya servislerinde kullanılacak UI/UX c
 - [Text Input](https://www.wix.com/velo/reference/$w/textinput)
 - [Text Input With Icon](https://www.wix.com/velo/reference/$w/textinput)
 - [Breadcrumbs](https://www.wix.com/velo/reference/$w/breadcrumbs)
+- [Button](https://www.wix.com/velo/reference/$w/button)
 
 ---
 
